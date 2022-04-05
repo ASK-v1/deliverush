@@ -1,0 +1,42 @@
+@import './index.scss';
+
+.search {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  margin-left: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: $primary-color;
+  }
+
+  &-auto-find {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    .auto {
+      background-color: white;
+      width: 30rem;
+    }
+
+    .find {
+      background-color: $secondary-color;
+      color: white;
+      width: 7rem;
+      height: 3.45rem;
+      border: none;
+      box-shadow: $secondary-shadow;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: medium;
+
+      &:hover {
+        background-color: #0f7030;
+        transition: 0.3s;
+      }
+    }
+  }
+}

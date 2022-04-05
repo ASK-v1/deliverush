@@ -1,0 +1,62 @@
+@import './index.scss';
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://res.cloudinary.com/dpsbq1odp/image/upload/v1649150490/home_nzh36p.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40rem;
+
+  &-logo-btn {
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .logo {
+      width: 250px !important;
+      height: fit-content !important;
+    }
+
+    &-login-signup {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+
+      .signup {
+        background-color: white;
+        color: black;
+        width: 6rem;
+        height: 3.3rem;
+        border: none;
+        box-shadow: $secondary-shadow;
+        cursor: pointer;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: medium;
+        &:hover {
+          transition: 0.3s;
+          background-color: #e2e2e2;
+        }
+      }
+
+      .login {
+        background-color: $primary-color;
+        color: white;
+        width: 6rem;
+        height: 3.3rem;
+        border: none;
+        box-shadow: $secondary-shadow;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: medium;
+        font-weight: 600;
+        &:hover {
+          transition: 0.3s;
+          background-color: #222222;
+        }
+      }
+    }
+  }
+}
