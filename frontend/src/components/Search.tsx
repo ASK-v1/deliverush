@@ -25,7 +25,7 @@ export default function Search() {
           }}
           options={cities}
           renderInput={(params) => (
-            <TextField variant="filled" {...params} label="Enter delivery address" />
+            <TextField variant="outlined" {...params} placeholder="Enter delivery address" />
           )}
         />
         <button className="find">Find Food</button>

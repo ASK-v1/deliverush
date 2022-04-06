@@ -1,6 +1,7 @@
 import '../styles/home.scss';
 import Search from '../components/Search';
 import Footer from '../components/Footer';
+import Slider from '../components/Slider';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
@@ -18,6 +19,7 @@ export default function Navbar() {
         </div>
         <Search />
       </div>
+      <Slider />
       <Footer />
     </div>
   );

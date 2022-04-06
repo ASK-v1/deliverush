@@ -1,0 +1,42 @@
+@import './index.scss';
+
+.slider {
+  height: 230px;
+  margin: auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 18);
+  animation: scroll 40s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translateX(-250px * 9);
+  }
+}
+
+.slide > * {
+  height: 200px;
+  width: 300px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: $secondary-shadow;
+  border-radius: 15px;
+
+  &:hover {
+    opacity: 80%;
+  }
+}
