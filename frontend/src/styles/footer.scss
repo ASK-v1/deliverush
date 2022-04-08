@@ -6,10 +6,10 @@
   justify-content: space-between;
   align-items: center;
   background-color: $primary-color;
-  padding: 5rem;
+  padding: 10vh;
   color: white;
 
-  .left > h1 {
+  .left > * {
     display: flex;
     font-size: medium;
     font-weight: 400;
@@ -20,10 +20,6 @@
       text-decoration: underline;
       cursor: pointer;
     }
-  }
-
-  h2 {
-    margin-top: 2rem;
   }
 
   .right {

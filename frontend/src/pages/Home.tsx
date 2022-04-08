@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Slider from '../components/Slider';
 import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Home() {
   return (
     <div>
       <div className="navbar">
@@ -13,8 +13,12 @@ export default function Navbar() {
             <img className="logo" src="/images/logo.png" alt="logo" />
           </Link>
           <div className="navbar-logo-btn-login-signup">
-            <button className="login">Log in</button>
-            <button className="signup">Sign up</button>
+            <Link to="/login">
+              <button className="login">Log in</button>
+            </Link>
+            <Link to="/signup">
+              <button className="signup">Sign up</button>
+            </Link>
           </div>
         </div>
         <Search />
