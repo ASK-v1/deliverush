@@ -1,0 +1,78 @@
+@import './index.scss';
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+  box-shadow: $primary-shadow;
+  align-items: center;
+
+  &-menu-icon {
+    color: black;
+    font-size: 30px !important;
+    margin-left: 1rem;
+  }
+
+  &-login {
+    background-color: $primary-color;
+    color: white;
+    width: 80px;
+    height: 40px;
+    border: none;
+    box-shadow: $secondary-shadow;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    &:hover {
+      transition: 0.3s;
+      background-color: #222222;
+    }
+  }
+
+  &-cart {
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color;
+    box-shadow: $secondary-shadow;
+    color: white;
+    height: 40px;
+    width: 80px !important;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+
+    &:hover {
+      background-color: rgb(60, 120, 60);
+    }
+  }
+
+  &-close {
+    cursor: pointer;
+    margin: 10px;
+    color: black;
+    font-size: 30px !important;
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &-left {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &-logo {
+    margin-right: 12rem;
+  }
+}

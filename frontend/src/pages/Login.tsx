@@ -28,7 +28,7 @@ export default function Login() {
     <div className="login">
       <div className="login-bar">
         <Link to="/">
-          <img className="logo" src="/images/logo.png" alt="logo" />
+          <img className="logo" src="/images/logo.png" width={175} alt="logo" />
         </Link>
       </div>
 

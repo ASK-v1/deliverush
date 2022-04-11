@@ -28,7 +28,7 @@ export default function Signup() {
     <div className="signup">
       <div className="signup-bar">
         <Link to="/">
-          <img className="logo" src="/images/logo.png" alt="logo" />
+          <img className="logo" src="/images/logo.png" width={175} alt="logo" />
         </Link>
       </div>
 

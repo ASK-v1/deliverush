@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div>
-      <div className="navbar">
-        <div className="navbar-logo-btn">
+    <div className="home">
+      <div className="home-navbar">
+        <div className="home-navbar-logo-btn">
           <Link to="/">
-            <img className="logo" src="/images/logo.png" alt="logo" />
+            <img className="logo" src="/images/logo.png" width={250} alt="logo" />
           </Link>
-          <div className="navbar-logo-btn-login-signup">
+          <div className="home-navbar-logo-btn-login-signup">
             <Link to="/login">
               <button className="login">Log in</button>
             </Link>
