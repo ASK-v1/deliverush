@@ -65,7 +65,7 @@ export default function Search() {
           loading={loading}
           selectOnFocus
           autoHighlight
-          clearIcon
+          clearIcon={false}
           renderInput={(params) => (
             <TextField
               {...params}

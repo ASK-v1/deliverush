@@ -130,9 +130,9 @@ export default function Navbar() {
           options={options}
           loading={loading}
           selectOnFocus
-          popupIcon
+          popupIcon={false}
           autoHighlight
-          clearIcon
+          clearIcon={false}
           renderInput={(params) => (
             <TextField
               {...params}

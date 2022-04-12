@@ -1,0 +1,49 @@
+@import './index.scss';
+
+.filters {
+  &-upper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8rem;
+    margin-top: 2.8rem;
+
+    .inactive {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      img:hover {
+        background-color: rgb(175, 255, 175);
+        border-radius: 40px;
+        padding: 4px;
+        cursor: pointer;
+        border: 1px solid rgb(0, 0, 0);
+        box-sizing: border-box;
+      }
+    }
+
+    .active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      img {
+        background-color: rgb(175, 255, 175);
+        border-radius: 40px;
+        padding: 4px;
+        cursor: pointer;
+        border: 1px solid rgb(0, 0, 0);
+        box-sizing: border-box;
+      }
+
+      h5 {
+        color: $secondary-color;
+      }
+    }
+  }
+}

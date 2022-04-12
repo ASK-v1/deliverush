@@ -1,19 +1,16 @@
 import Navbar from '../components/Navbar';
+import Filters from '../components/Filters';
 import '../styles/restaurants.scss';
 
 export default function Restaurants() {
   return (
     <div className="restaurants">
-      <div restaurants-navbar>
+      <div className="restaurants-navbar">
         <Navbar />
       </div>
 
-      <div restaurants-filters>
-        <h1>Filters</h1>
-      </div>
-
-      <div restaurants-banners>
-        <h1>Banners</h1>
+      <div className="restaurants-filters">
+        <Filters />
       </div>
     </div>
   );
