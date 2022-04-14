@@ -1,48 +1,291 @@
 @import './index.scss';
 
 .filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   &-upper {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 2.8rem;
     margin-top: 2.8rem;
 
-    .inactive {
+    &-inactive {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      cursor: pointer;
 
-      img:hover {
-        background-color: rgb(175, 255, 175);
-        border-radius: 40px;
-        padding: 4px;
-        cursor: pointer;
-        border: 1px solid rgb(0, 0, 0);
-        box-sizing: border-box;
+      h5 {
+        color: $primary-color;
+        position: relative;
+        top: -0.8rem;
+      }
+
+      &:hover {
+        img {
+          background-color: rgb(175, 255, 175);
+          border-radius: 40px;
+          padding: 4px;
+          border: 1px solid rgb(0, 0, 0);
+          box-sizing: border-box;
+        }
+
+        h5 {
+          color: $secondary-color;
+        }
       }
     }
 
-    .active {
+    &-active {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      cursor: pointer;
 
       img {
         background-color: rgb(175, 255, 175);
         border-radius: 40px;
         padding: 4px;
-        cursor: pointer;
         border: 1px solid rgb(0, 0, 0);
         box-sizing: border-box;
       }
 
       h5 {
         color: $secondary-color;
+        position: relative;
+        top: -0.8rem;
+      }
+    }
+  }
+
+  &-lower {
+    display: flex;
+    justify-content: center;
+    margin-right: 62rem;
+    gap: 1rem;
+
+    &-inactive {
+      background-color: rgb(222, 222, 222);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+      border: none;
+      font-weight: 600;
+      gap: 0.3rem;
+      cursor: pointer;
+      border-radius: 20px;
+      box-shadow: $secondary-shadow;
+      color: $primary-color;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: rgb(233, 233, 233);
+      }
+
+      &-star {
+        font-size: 13px !important;
+        color: $primary-color !important;
+      }
+
+      &-arrow {
+        font-size: 16px !important;
+        color: $primary-color !important;
+      }
+    }
+
+    &-active {
+      background-color: $primary-color;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+      border: none;
+      font-weight: 600;
+      gap: 0.3rem;
+      cursor: pointer;
+      border-radius: 20px;
+      box-shadow: $secondary-shadow;
+      color: white;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #222222;
+      }
+
+      &-star {
+        font-size: 13px !important;
+        color: white !important;
+      }
+
+      &-arrow {
+        font-size: 16px !important;
+        color: white !important;
+      }
+    }
+  }
+
+  &-menu {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    justify-content: center;
+
+    &-title {
+      font-weight: 800;
+      color: $primary-color;
+      margin-left: 1rem;
+      margin-top: 0.4rem;
+
+      &-over {
+        color: gray;
+        font-weight: 700;
+        font-size: small;
+        margin-left: 1rem;
+        margin-top: -0.5rem;
+      }
+    }
+
+    &-price {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: start;
+      margin-left: 1rem;
+      margin-right: 1rem;
+
+      &-inactive {
+        &-low,
+        &-medium,
+        &-high,
+        &-very-high {
+          display: flex;
+          flex-direction: row;
+          border-radius: 4rem;
+          align-items: center;
+          justify-content: center;
+          min-width: 4rem;
+          border: none;
+          cursor: pointer;
+          padding: 0.4rem;
+          background-color: rgb(222, 222, 222);
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: rgb(233, 233, 233);
+          }
+        }
+      }
+
+      &-active {
+        &-low,
+        &-medium,
+        &-high,
+        &-very-high {
+          display: flex;
+          flex-direction: row;
+          border-radius: 4rem;
+          align-items: center;
+          justify-content: center;
+          min-width: 4rem;
+          border: none;
+          cursor: pointer;
+          padding: 0.4rem;
+          background-color: $primary-color;
+          transition: all 0.3s;
+          color: white;
+
+          &:hover {
+            background-color: #222222;
+          }
+        }
+      }
+    }
+
+    &-line {
+      border-bottom: 1px solid rgb(222, 222, 222);
+      margin-top: 1rem;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+      margin-top: 1rem;
+      gap: 2rem;
+      margin-right: 1rem;
+      margin-bottom: 0.4rem;
+
+      &-results {
+        background-color: $secondary-color;
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: $secondary-shadow;
+        font-weight: 600;
+        padding: 0.5rem;
+        border-radius: 20px;
+        width: 7rem;
+
+        &:hover {
+          background-color: #0f7030;
+        }
+      }
+
+      &-cancel {
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 800;
+        color: $primary-color;
+      }
+    }
+
+    &-slider {
+      width: 20rem;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+  }
+
+  &-rr {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 69rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgb(233, 233, 233);
+
+    &-results {
+      font-weight: 800;
+      color: $primary-color;
+    }
+
+    &-reset {
+      background-color: rgb(222, 222, 222);
+      padding: 10px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 20px;
+      box-shadow: $secondary-shadow;
+      color: $primary-color;
+      transition: all 0.3s;
+
+      width: 5rem;
+
+      &:hover {
+        background-color: rgb(233, 233, 233);
       }
     }
   }

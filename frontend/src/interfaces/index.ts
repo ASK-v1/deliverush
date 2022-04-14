@@ -14,3 +14,10 @@ export interface FiltersInterface {
   alcohol: boolean;
   barbecue: boolean;
 }
+
+export interface FiltersPriceInterface {
+  low: boolean;
+  medium: boolean;
+  high: boolean;
+  veryHigh: boolean;
+}
