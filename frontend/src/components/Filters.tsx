@@ -296,7 +296,7 @@ export default function Filters() {
             onClick={(event) => setAnchorElRating(event.currentTarget)}
             className="filters-lower-active"
           >
-            Over 3.5 <StarIcon className="filters-lower-active-star" />
+            Over {rating} <StarIcon className="filters-lower-active-star" />
             <KeyboardArrowDownIcon className="filters-lower-active-arrow" />
           </button>
         ) : (
@@ -304,7 +304,7 @@ export default function Filters() {
             onClick={(event) => setAnchorElRating(event.currentTarget)}
             className="filters-lower-inactive"
           >
-            Over 3.5 <StarIcon className="filters-lower-inactive-star" />
+            Over {rating} <StarIcon className="filters-lower-inactive-star" />
             <KeyboardArrowDownIcon className="filters-lower-inactive-arrow" />
           </button>
         )}
