@@ -1,5 +1,7 @@
 import Navbar from '../components/Navbar';
 import Filters from '../components/Filters';
+import Banners from '../components/Banners';
+import Footer from '../components/Footer';
 import '../styles/restaurants.scss';
 
 export default function Restaurants() {
@@ -9,8 +11,16 @@ export default function Restaurants() {
         <Navbar />
       </div>
 
+      <div className="restaurants-banners">
+        <Banners />
+      </div>
+
       <div className="restaurants-filters">
         <Filters />
+      </div>
+
+      <div style={{ marginTop: '20rem' }} className="restaurants-footer">
+        <Footer />
       </div>
     </div>
   );
