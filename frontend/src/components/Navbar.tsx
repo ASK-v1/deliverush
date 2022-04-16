@@ -18,6 +18,10 @@ import Autocomplete from '@mui/material/Autocomplete';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import CircularProgress from '@mui/material/CircularProgress';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 type Anchor = 'left' | 'right';
 
@@ -30,6 +34,8 @@ function sleep(delay = 0) {
 const option = ['1', '2', '3', '4', '5'];
 
 export default function Navbar() {
+  const [amount, setAmount] = useState('1');
+
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<Array<string>>([]);
   const loading = open && options.length === 0;
@@ -162,13 +168,87 @@ export default function Navbar() {
         </Link>
         <button className="navbar-cart" onClick={toggleDrawer('right', true)}>
           <ShoppingCartIcon />
-          <h2>0</h2>
+          <h2>3</h2>
         </button>
 
         <Drawer anchor={'right'} open={state['right']} onClose={toggleDrawer('right', false)}>
           <Box sx={{ width: 350 }} onKeyDown={toggleDrawer('right', false)}>
             <CloseIcon onClick={toggleDrawer('right', false)} className="navbar-close" />
-            <h1>Your cart is empty Add items to get started</h1>
+            <div className="navbar-right-title">
+              <div className="navbar-right-title-first">Your cart from</div>
+              <div className="navbar-right-title-second">
+                Happy Pizza <ArrowForwardIosIcon style={{ fontSize: '12px', marginTop: '9px' }} />
+              </div>
+            </div>
+            <button className="navbar-right-checkout">
+              Checkout <div className="navbar-right-checkout-price">$103.50</div>
+            </button>
+
+            <div className="navbar-right-divider-out" />
+
+            {[1, 2, 3].map(() => (
+              <div>
+                <div className="navbar-right-cart">
+                  <img
+                    src="https://res.cloudinary.com/dpsbq1odp/image/upload/v1649237152/alan-hardman-SU1LFoeEUkk-unsplash_tv8nr0.jpg"
+                    alt="cart"
+                    width={132}
+                    height={88}
+                  />
+                  <div className="navbar-right-cart-mid">
+                    <div>
+                      <div className="navbar-right-cart-mid-title">Ultimate Pepperoni</div>
+                      <div className="navbar-right-cart-mid-type">
+                        10 Inch Original Pepperoni Pizza
+                      </div>
+                    </div>
+
+                    <div className="navbar-right-cart-mid-p-a">
+                      <div className="navbar-right-cart-mid-p-a-price">$34.50</div>
+                      <div className="navbar-right-cart-mid-p-a-amount">
+                        <Select
+                          sx={{
+                            width: '53.3px',
+                            height: '21.3px',
+                            borderRadius: '20px',
+                            fontSize: '12.5px',
+                            backgroundColor: 'white',
+                          }}
+                          value={amount}
+                          onChange={(event) => setAmount(event.target.value)}
+                          autoWidth
+                          placeholder={amount}
+                        >
+                          <MenuItem value={1}>1</MenuItem>
+                          <MenuItem value={2}>2</MenuItem>
+                          <MenuItem value={3}>3</MenuItem>
+                          <MenuItem value={4}>4</MenuItem>
+                          <MenuItem value={5}>5</MenuItem>
+                          <MenuItem value={6}>6</MenuItem>
+                          <MenuItem value={7}>7</MenuItem>
+                          <MenuItem value={8}>8</MenuItem>
+                          <MenuItem value={9}>9</MenuItem>
+                        </Select>
+                      </div>
+                      <div className="navbar-right-cart-mid-p-a-delete">
+                        <DeleteIcon
+                          fontSize="small"
+                          sx={{
+                            borderRadius: '20px',
+                            fontSize: '12.5px',
+                            color: 'white',
+                            backgroundColor: 'gray',
+                            padding: '3px',
+                            marginTop: '2px',
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="navbar-right-divider-in" />
+              </div>
+            ))}
           </Box>
         </Drawer>
       </div>
