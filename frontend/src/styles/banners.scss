@@ -20,17 +20,23 @@
 
 .prev {
   position: relative;
-  top: 8rem;
+  top: 7.5rem;
   z-index: 10;
   right: 615.5px;
   cursor: pointer;
-  border-radius: 25px !important;
-  height: 15px !important;
-  width: 15px !important;
+  border-radius: 1rem;
   box-shadow: $primary-shadow;
   background-color: white;
-  padding: 7.5px;
+  padding: 4px;
   color: $primary-color;
+  border: none;
+  width: 2rem;
+
+  &-back {
+    position: relative;
+    left: 3.5px;
+    top: 1.5px;
+  }
 
   &:hover {
     background-color: rgb(233, 233, 233);
@@ -39,17 +45,23 @@
 
 .next {
   position: relative;
-  top: 8rem;
+  top: 7.5rem;
   z-index: 10;
   left: 615.5px;
   cursor: pointer;
-  border-radius: 25px !important;
-  height: 15px !important;
-  width: 15px !important;
+  border-radius: 1rem;
   box-shadow: $primary-shadow;
   background-color: white;
-  padding: 7.5px;
+  padding: 4px;
   color: $primary-color;
+  border: none;
+  width: 2rem;
+
+  &-forward {
+    position: relative;
+    left: 1px;
+    top: 1.5px;
+  }
 
   &:hover {
     background-color: rgb(233, 233, 233);

@@ -8,8 +8,16 @@ export default function Banners() {
 
   return (
     <div className="slideshow">
-      {index !== 0 && <ArrowBackIosIcon onClick={() => setIndex(0)} className="prev" />}
-      {index !== 1 && <ArrowForwardIosIcon onClick={() => setIndex(1)} className="next" />}
+      {index !== 0 && (
+        <button onClick={() => setIndex(0)} className="prev">
+          <ArrowBackIosIcon className="prev-back" fontSize="small" />
+        </button>
+      )}
+      {index !== 1 && (
+        <button onClick={() => setIndex(1)} className="next">
+          <ArrowForwardIosIcon className="next-forward" fontSize="small" />
+        </button>
+      )}
 
       <div className="slideshow-slider" style={{ transform: `translate3d(${-index * 50}%, 0, 0)` }}>
         <img
