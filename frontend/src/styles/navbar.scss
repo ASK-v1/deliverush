@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem;
-  box-shadow: $primary-shadow;
+  border-bottom: 1px solid rgb(222, 222, 222);
   align-items: center;
 
   &-menu-icon {
@@ -137,7 +137,6 @@
       &:hover {
         cursor: pointer;
         background-color: rgb(240, 240, 240);
-        transition: 0.5s;
       }
 
       img {

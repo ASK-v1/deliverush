@@ -4,31 +4,17 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
-import CircularProgress from '@mui/material/CircularProgress';
-
-function sleep(delay = 0) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, delay);
-  });
-}
 
 const cities = ['San Francisco', 'Los Angeles', 'Chicago', 'Boston', 'Seattle'];
 
 export default function Search() {
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<Array<string>>([]);
-  const loading = open && options.length === 0;
 
   useEffect(() => {
     let active = true;
 
-    if (!loading) {
-      return undefined;
-    }
-
     (async () => {
-      await sleep(1000);
-
       if (active) {
         setOptions(cities);
       }
@@ -37,7 +23,7 @@ export default function Search() {
     return () => {
       active = false;
     };
-  }, [loading]);
+  });
 
   useEffect(() => {
     if (!open) {
@@ -62,10 +48,10 @@ export default function Search() {
           isOptionEqualToValue={(option, value) => option === value}
           getOptionLabel={(option) => option}
           options={options}
-          loading={loading}
           selectOnFocus
           autoHighlight
           clearIcon={false}
+          popupIcon={false}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -73,12 +59,6 @@ export default function Search() {
               InputProps={{
                 ...params.InputProps,
                 startAdornment: <SearchIcon style={{ marginRight: '5px' }} fontSize="large" />,
-                endAdornment: (
-                  <React.Fragment>
-                    {loading ? <CircularProgress color="inherit" size={25} /> : null}
-                    {params.InputProps.endAdornment}
-                  </React.Fragment>
-                ),
               }}
             />
           )}

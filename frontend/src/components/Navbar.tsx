@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/navbar.scss';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -17,7 +17,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import Autocomplete from '@mui/material/Autocomplete';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
-import CircularProgress from '@mui/material/CircularProgress';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -25,31 +24,17 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 type Anchor = 'left' | 'right';
 
-function sleep(delay = 0) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, delay);
-  });
-}
-
 const option = ['1', '2', '3', '4', '5'];
 
 export default function Navbar() {
   const [amount, setAmount] = useState('1');
-
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<Array<string>>([]);
-  const loading = open && options.length === 0;
 
   useEffect(() => {
     let active = true;
-
-    if (!loading) {
-      return undefined;
-    }
-
     (async () => {
-      await sleep(1000);
-
       if (active) {
         setOptions(option);
       }
@@ -58,7 +43,7 @@ export default function Navbar() {
     return () => {
       active = false;
     };
-  }, [loading]);
+  });
 
   useEffect(() => {
     if (!open) {
@@ -134,7 +119,6 @@ export default function Navbar() {
           isOptionEqualToValue={(option, value) => option === value}
           getOptionLabel={(option) => option}
           options={options}
-          loading={loading}
           selectOnFocus
           popupIcon={false}
           autoHighlight
@@ -146,12 +130,6 @@ export default function Navbar() {
               InputProps={{
                 ...params.InputProps,
                 startAdornment: <SearchIcon style={{ marginRight: '5px' }} fontSize="medium" />,
-                endAdornment: (
-                  <React.Fragment>
-                    {loading ? <CircularProgress color="inherit" size={20} /> : null}
-                    {params.InputProps.endAdornment}
-                  </React.Fragment>
-                ),
               }}
             />
           )}
@@ -180,7 +158,7 @@ export default function Navbar() {
                 Happy Pizza <ArrowForwardIosIcon style={{ fontSize: '12px', marginTop: '9px' }} />
               </div>
             </div>
-            <button className="navbar-right-checkout">
+            <button onClick={() => navigate('/checkout')} className="navbar-right-checkout">
               Checkout <div className="navbar-right-checkout-price">$103.50</div>
             </button>
 
